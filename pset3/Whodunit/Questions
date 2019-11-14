@@ -1,0 +1,36 @@
+Questions
+What's stdint.h?
+The header declares sets of integer types having specified widths.
+
+What's the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+designates an unsigned integer type with width 8 bits designates a signed integer type with width 32bits designates an unsigned integer type with width 16 bits
+
+How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+BYTE is 8 bits DWord =32 bit unsigned integer LONG = 8bytes 64 bits Word = 16 bits
+
+What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? Leading bytes used to identify file formats (with high probability) are generally called "magic numbers."
+B and M
+
+What's the difference between bfSize and biSize?
+bfsize should store the size of the whole BMP file, bisize should store the size of the BMP image
+
+What does it mean if biHeight is negative?
+the bitmap is a top-down DIB and its origin is the upper-left corner.
+
+What field in BITMAPINFOHEADER specifies the BMP's color depth (i.e., bits per pixel)?
+The specifies the number of bits per pixel. It defines the max number of colors in the bitmap.
+
+Why might fopen return NULL in copy.c?
+if the file doesn't exist, or if there is not engough memory for the computer to create the desired file.
+
+Why is the third argument to fread always 1 in our code?
+The third argument in fread is the count argument, which holds the maximum number of items to be read.
+
+What value does copy.c assign to padding if bi.biWidth is 3?
+copy.c:70 would assign a value of 3 if <bi.biWidth> is 3. This is because the size of RGBTRIPLE = 3, and 3 * 3 = 9 --> 9 % 4 = 1 --> 4 - 1 = 3 --> 3 % 4 = 3. // int padding = (4 - (3 * 3 % 4) % 4; // int padding = 3;
+
+What does fseek do?
+fseek() is used to move file pointer associated with a given file to a specific position. in copy it skips over padding
+
+What is SEEK_CUR?
+It moves file pointer position to given location.
